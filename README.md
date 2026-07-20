@@ -7,9 +7,9 @@ Made to be personalized, compiled through SCSS!
 
 ### Setting Primary
 
-Open **Settings → Interface** and set:
+Open **Settings > Interface** and set:
 
-- **Primary Color** → `#7316fd`
+- **Primary Color** > `#7316fd`
 
 This will be the primary used throughout the theme
 
@@ -35,14 +35,7 @@ SCSS Docs: https://sass-lang.com/guide/
 ```bash
 git clone https://github.com/Paraxdev/NeoNoirMainsailTheme /home/$USER/printer_data/config/.theme
 ```
-
-Hard-refresh Mainsail (control + shift + r) and it should pick up the new style.
-
-If your tool of choice doesn't clone directly into `.theme`, just copy this
-repo's contents (`custom.css`, `favicon-16x16.png`, `favicon-32x32.png`,
-`sidebar-logo.svg`) into `config/.theme` yourself. The `src/` folder is only
-the SCSS source used to build `custom.css` — Mainsail doesn't need it, so it's
-fine to leave it out or keep it, it won't interfere.
+Hard-refresh Mainsail (control + shift + r)  if it doesn't update propperly
 
 ## creating a new css for mainsail using node
 
