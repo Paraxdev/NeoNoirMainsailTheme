@@ -3,7 +3,7 @@
 Neo-Brutalism on Mainsail!
 Made to be personalized, compiled through SCSS!
 
-![NEONOIR dashboard](screenshots/01-dashboard.png)
+![NEONOIR dashboard](screenshots/screenshot.png)
 
 ### Setting Primary
 
@@ -30,25 +30,34 @@ set border-radius to whatever you want.
 you can write normal CSS or use more advanced SCSS features
 SCSS Docs: https://sass-lang.com/guide/
 
+## installing
+
+```bash
+git clone https://github.com/Paraxdev/NeoNoirMainsailTheme /home/$USER/printer_data/config/.theme
+```
+
+Hard-refresh Mainsail (control + shift + r) and it should pick up the new style.
+
+If your tool of choice doesn't clone directly into `.theme`, just copy this
+repo's contents (`custom.css`, `favicon-16x16.png`, `favicon-32x32.png`,
+`sidebar-logo.svg`) into `config/.theme` yourself. The `src/` folder is only
+the SCSS source used to build `custom.css` — Mainsail doesn't need it, so it's
+fine to leave it out or keep it, it won't interfere.
+
 ## creating a new css for mainsail using node
 
 you will need nodejs for the next part, so download using your package manager like apt (sudo apt install nodejs) or visit the nodejs website
 
 ```bash
-# assuming you have just cloned it off github and that its at your users directory
-cd NeoNoirMainsailTheme
-
 # install packages via npm
 npm install
 
 # run command to create a new custom.css
 npm run build
-
-# move generated files into mainsails theme folder (assuming your klipper files are at printer_data)
-mkdir -p /home/$USER/printer_data/config/.theme && cp -rf .theme/. /home/$USER/printer_data/config/.theme/
 ```
 
-running the command above should instantly change the style, if it bugs around press control + shift + r to hard reload
+this regenerates `custom.css` in place, assuming this folder in in config/.theme
+
 
 
 --- 
@@ -57,10 +66,10 @@ running the command above should instantly change the style, if it bugs around p
 
 | | |
 |---|---|
-| ![Sidebar nav](screenshots/02-sidebar-detail.png) **Sidebar** | ![Macros panel](screenshots/03-macros-detail.png) **Macros**  |
-| ![Console](screenshots/04-console.png) **Console**  | ![Machine page](screenshots/05-machine.png) **Machine**  |
-| ![Devices dialog](screenshots/06-devices-dialog.png) **Devices** | ![Settings dialog](screenshots/08-settings.png) **Settings** |
-| ![Code editor](screenshots/07-code-editor.png) **Config editor**  | |
+| ![Sidebar nav](screenshots/screenshot1.png) **Sidebar** | ![Macros panel](screenshots/screenshot2.png) **Macros**  |
+| ![Console](screenshots/screenshot3.png) **Console**  | ![Machine page](screenshots/screenshot4.png) **Machine**  |
+| ![Devices dialog](screenshots/screenshot5.png) **Devices** | ![Settings dialog](screenshots/screenshot7.png) **Settings** |
+| ![Code editor](screenshots/screenshot6.png) **Config editor**  | |
 
 
 ---
