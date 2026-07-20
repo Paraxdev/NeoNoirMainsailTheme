@@ -1,0 +1,91 @@
+@use 'mixins' as *;
+
+
+.v-ripple__container, .v-ripple__animation { display: none !important; }
+
+html, body,
+.v-application,
+.theme--dark.v-application,
+.v-application__wrap {
+    background-color: var(--nn-void) !important;
+    color: var(--nn-text);
+}
+.v-application .v-main {
+    background-color: var(--nn-void) !important;
+    background-image:
+        radial-gradient(rgba(255, 255, 255, 0.04) 1.4px, transparent 1.5px) !important;
+    background-size: 24px 24px !important;
+    background-attachment: fixed !important;
+    background-repeat: repeat !important;
+}
+
+* { scrollbar-width: thin; scrollbar-color: var(--nn-purple-deep) var(--nn-card-2); }
+::-webkit-scrollbar { width: 11px; height: 11px; }
+::-webkit-scrollbar-track { background: var(--nn-card-2); }
+::-webkit-scrollbar-thumb {
+    background: var(--nn-purple-deep);
+    border: 2px solid var(--nn-card-2);
+    border-radius: var(--nn-r-pill);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--nn-purple); }
+::selection { background: var(--nn-purple); color: var(--nn-on-primary); }
+
+.v-application { font-family: var(--nn-ui) !important; }
+
+.v-app-bar .v-toolbar__title,
+.v-card > .v-card__title,
+.v-card > .v-toolbar .v-toolbar__title,
+.panel .v-card__title,
+.v-btn, .v-tab, .nav-title,
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--nn-display) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+    text-transform: none;
+}
+.v-card > .v-card__title,
+.v-card > .v-toolbar .v-toolbar__title,
+.panel .v-card__title { font-size: 1rem !important; }
+
+.v-data-table td, .v-data-table th,
+input, .v-text-field input,
+code, kbd, samp, pre,
+.console, .console-table, .gcode-viewer {
+    font-family: var(--nn-mono) !important;
+    font-variant-numeric: tabular-nums;
+}
+
+.v-main .v-card,
+.v-main .panel {
+    background-color: var(--nn-card) !important;
+    background-image: none !important;
+    color: var(--nn-text) !important;
+    border: 3px solid var(--nn-edge) !important;
+    border-radius: var(--nn-r) !important;
+    box-shadow: var(--nn-shadow-sm) !important;
+    transition: box-shadow var(--nn-fast), border-color var(--nn-fast);
+}
+.v-main .v-card:hover,
+.v-main .panel:hover {
+    box-shadow: var(--nn-drop-p) !important;
+}
+
+.v-main .v-card > .v-card__title,
+.v-main .panel > .v-card__title,
+.v-main .v-card > .v-toolbar:first-child,
+.v-main .v-card > .v-toolbar:first-child .v-toolbar__content,
+.v-main .panel > .v-toolbar:first-child,
+.v-main .panel > .v-toolbar:first-child .v-toolbar__content {
+    background-color: var(--nn-ink) !important;
+    background-image: none !important;
+    border-bottom: 3px solid var(--nn-purple) !important;
+    color: var(--nn-text) !important;
+}
+.v-main .v-card > .v-toolbar:first-child { border-radius: var(--nn-r) var(--nn-r) 0 0 !important; }
+
+.v-main .v-card .v-card {
+    background-color: var(--nn-card-2) !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+.v-divider, hr, .theme--dark.v-divider { border-color: var(--nn-hairline) !important; }

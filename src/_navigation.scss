@@ -1,0 +1,155 @@
+@use 'mixins' as *;
+
+
+.v-navigation-drawer,
+.v-navigation-drawer.theme--dark,
+.v-navigation-drawer > .v-navigation-drawer__content,
+aside.v-navigation-drawer {
+    background: var(--nn-ink) !important;
+    background-image: none !important;
+    border-right: 2px solid var(--nn-edge) !important;
+}
+.v-navigation-drawer .v-navigation-drawer__image,
+.v-navigation-drawer .v-image__image { display: none !important; }
+
+#nav-header {
+    background: var(--nn-ink) !important;
+    border-bottom: 2px solid var(--nn-purple) !important;
+}
+#nav-header .v-toolbar__title {
+    font-weight: 700 !important; letter-spacing: 0.01em !important;
+    text-transform: none; text-shadow: var(--nn-glow-purple);
+}
+
+.v-navigation-drawer a.v-list-item.small-list-item {
+    color: var(--nn-text) !important;
+    margin: 5px 10px !important;
+    padding: 0 12px !important;
+    min-height: 40px !important;
+    height: 40px !important;
+    border: 2px solid var(--nn-ink) !important;
+    border-radius: var(--nn-r-sm) !important;
+    background: var(--nn-card) !important;
+    box-shadow: var(--nn-shadow-sm), inset 0 1px 0 rgba(255, 255, 255, 0.07) !important;
+    font-family: var(--nn-display) !important;
+    font-weight: 600 !important;
+    font-size: 0.82rem !important;
+    letter-spacing: 0.06em !important;
+    transition: transform var(--nn-fast), box-shadow var(--nn-fast),
+                background var(--nn-fast), border-color var(--nn-fast) !important;
+}
+
+.v-navigation-drawer a.v-list-item.small-list-item::before { display: none !important; }
+.v-navigation-drawer a.v-list-item.small-list-item .v-icon { color: var(--nn-purple-lite) !important; }
+.v-navigation-drawer a.v-list-item.small-list-item .v-list-item__icon {
+    margin: 0 10px 0 0 !important;
+    height: auto !important;
+    min-width: 0 !important;
+    align-self: center !important;
+}
+.v-navigation-drawer a.v-list-item.small-list-item:hover {
+    transform: translate(-2px, -2px) !important;
+    box-shadow: var(--nn-drop-p), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    border-color: var(--nn-purple) !important;
+}
+.v-navigation-drawer a.v-list-item.small-list-item:active {
+    transform: translate(2px, 2px) !important;
+    box-shadow: var(--nn-shadow-press) !important;
+}
+
+.v-navigation-drawer a.v-list-item.small-list-item.active-nav-item {
+    background: var(--nn-purple) !important;
+    border-color: var(--nn-ink) !important;
+    border-right-width: 2px !important;
+    box-shadow: var(--nn-shadow-sm), inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                var(--nn-glow-purple) !important;
+}
+.v-navigation-drawer a.v-list-item.small-list-item.active-nav-item,
+.v-navigation-drawer a.v-list-item.small-list-item.active-nav-item .v-icon,
+.v-navigation-drawer a.v-list-item.small-list-item.active-nav-item .v-list-item__title {
+    color: var(--nn-on-primary) !important;
+}
+
+.v-navigation-drawer .v-list-item__title,
+.v-navigation-drawer .v-list-item__subtitle { color: var(--nn-text) !important; }
+.v-navigation-drawer .v-list-item::before { background-color: var(--nn-purple) !important; }
+.v-navigation-drawer .v-list-item--active,
+.v-navigation-drawer .v-list-item--active .v-icon { color: var(--nn-purple-lite) !important; }
+.v-navigation-drawer .v-list-item--active::before { opacity: 0.18 !important; }
+
+
+.v-app-bar.v-toolbar,
+header.v-app-bar {
+    background-color: var(--nn-ink) !important;
+    background-image: none !important;
+    border-bottom: 2px solid var(--nn-purple) !important;
+    box-shadow: none !important;
+}
+.v-app-bar, .v-app-bar .v-toolbar__title, .v-app-bar .v-icon { color: var(--nn-text) !important; }
+.v-app-bar .v-toolbar__title { letter-spacing: 0.01em !important; text-transform: none; }
+
+.v-app-bar .save-config-button.v-btn:not(.v-btn--icon):not(.v-btn--fab),
+.v-app-bar .upload-and-start-button.v-btn:not(.v-btn--icon):not(.v-btn--fab),
+.v-app-bar .emergency-button.v-btn:not(.v-btn--icon):not(.v-btn--fab) {
+    height: 28px !important;
+    min-height: 0 !important;
+    padding: 0 13px !important;
+    margin: 0 0 0 10px !important;
+    border: 2px solid var(--nn-edge) !important;
+    border-radius: var(--nn-r-sm) !important;
+    background: transparent !important;
+    color: var(--nn-text) !important;
+    font-family: var(--nn-display) !important;
+    font-weight: 700 !important;
+    font-size: 0.68rem !important;
+    letter-spacing: 0.04em !important;
+    box-shadow: none !important;
+    transition: transform var(--nn-fast), box-shadow var(--nn-fast),
+                background var(--nn-fast), color var(--nn-fast), border-color var(--nn-fast) !important;
+}
+
+.v-app-bar .save-config-button.v-btn .v-icon,
+.v-app-bar .upload-and-start-button.v-btn .v-icon,
+.v-app-bar .emergency-button.v-btn .v-icon {
+    font-size: 16px !important;
+    width: 16px !important;
+    height: 16px !important;
+    margin-right: 7px !important;
+}
+
+.v-app-bar .save-config-button.v-btn:not(.v-btn--icon):not(.v-btn--fab),
+.v-app-bar .upload-and-start-button.v-btn:not(.v-btn--icon):not(.v-btn--fab) {
+    color: var(--nn-purple-lite) !important; border-color: var(--nn-purple-deep) !important;
+}
+.v-app-bar .save-config-button.v-btn .v-icon,
+.v-app-bar .upload-and-start-button.v-btn .v-icon { color: var(--nn-purple-lite) !important; }
+.v-app-bar .save-config-button.v-btn:not(.v-btn--icon):not(.v-btn--fab):hover,
+.v-app-bar .upload-and-start-button.v-btn:not(.v-btn--icon):not(.v-btn--fab):hover {
+    background: var(--nn-purple) !important;
+    border-color: var(--nn-purple) !important;
+    color: var(--nn-on-primary) !important;
+    transform: translate(-1px, -1px) !important;
+    box-shadow: 3px 3px 0 var(--nn-ink) !important;
+}
+.v-app-bar .save-config-button.v-btn:hover .v-icon,
+.v-app-bar .upload-and-start-button.v-btn:hover .v-icon { color: var(--nn-on-primary) !important; }
+
+.v-app-bar .emergency-button.v-btn:not(.v-btn--icon):not(.v-btn--fab) {
+    color: var(--nn-red) !important; border-color: var(--nn-red) !important;
+}
+.v-app-bar .emergency-button.v-btn .v-icon { color: var(--nn-red) !important; }
+.v-app-bar .emergency-button.v-btn:not(.v-btn--icon):not(.v-btn--fab):hover {
+    background: var(--nn-red) !important;
+    border-color: var(--nn-red) !important;
+    color: var(--nn-on-primary) !important;
+    transform: translate(-1px, -1px) !important;
+    box-shadow: 3px 3px 0 var(--nn-ink) !important;
+}
+.v-app-bar .emergency-button.v-btn:hover .v-icon { color: var(--nn-on-primary) !important; }
+
+.v-app-bar .save-config-button.v-btn:not(.v-btn--icon):not(.v-btn--fab):active,
+.v-app-bar .upload-and-start-button.v-btn:not(.v-btn--icon):not(.v-btn--fab):active,
+.v-app-bar .emergency-button.v-btn:not(.v-btn--icon):not(.v-btn--fab):active {
+    transform: translate(1px, 1px) !important;
+    box-shadow: var(--nn-shadow-press) !important;
+}

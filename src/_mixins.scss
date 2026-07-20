@@ -1,0 +1,77 @@
+// =============================================================================
+//  Runtime note: Mainsail's primary colour arrives at runtime as
+//  --v-primary-base and can change while the page is live. SCSS never sees its
+//  value, so every colour helper below emits a *live* color-mix()/var()
+//  expression rather than a pre-computed colour. Change primary in Mainsail and
+//  everything routed through these follows
+// =============================================================================
+
+
+// "real" button = not an icon / fab / text button. Used ~15× across the theme.
+// $guard is the bare :not() chain (for bases like .v-btn--small); $btn prefixes it.
+$guard: ':not(.v-btn--icon):not(.v-btn--fab):not(.v-btn--text)';
+$btn: '.v-btn' + $guard;
+
+// ---- runtime colour helpers ------------------------------------------------
+// tint(): the colour at a given strength over whatever is behind it (was the
+//         hard-coded rgba(255,90,158,x) pink — now tracks primary).
+// lift(): mix toward white.  sink(): mix toward black.
+@function tint($c, $pct) { @return color-mix(in srgb, #{$c} #{$pct}, transparent); }
+@function lift($c, $pct) { @return color-mix(in srgb, #{$c} #{$pct}, #fff); }
+@function sink($c, $pct) { @return color-mix(in srgb, #{$c} #{$pct}, #000); }
+
+
+@mixin neo-box($shadow: var(--nn-shadow-sm), $radius: var(--nn-r-sm)) {
+    border: 2px solid var(--nn-edge) !important;
+    border-radius: $radius !important;
+    box-shadow: $shadow !important;
+}
+
+
+@mixin press($rest: var(--nn-shadow-sm), $hover: var(--nn-drop)) {
+    box-shadow: $rest !important;
+    transition: transform var(--nn-fast), box-shadow var(--nn-fast) !important;
+    &:hover  { transform: translate(-2px, -2px) !important; box-shadow: $hover !important; }
+    &:active { transform: translate(2px, 2px)   !important; box-shadow: var(--nn-shadow-press) !important; }
+}
+
+
+@mixin checkbox-shell {
+    width: 22px !important;
+    height: 22px !important;
+    border: 2px solid var(--nn-edge) !important;
+    border-radius: 4px !important;
+    background: var(--nn-card-2) !important;
+    box-shadow: inset 0 1.5px 0 rgba(255, 255, 255, 0.14),
+                inset 0 -2px 3px rgba(0, 0, 0, 0.4),
+                2px 2px 0 #000 !important;
+    position: relative !important;
+    transition: background var(--nn-fast), box-shadow var(--nn-fast), border-color var(--nn-fast) !important;
+}
+@mixin checkbox-checked {
+    background: var(--nn-purple) !important;
+    box-shadow: inset 0 1.5px 0 rgba(255, 255, 255, 0.35),
+                inset 0 -2px 3px rgba(0, 0, 0, 0.35),
+                2px 2px 0 #000 !important;
+}
+@mixin checkmark {
+    content: "" !important;
+    position: absolute !important;
+    left: 6px !important; top: 2px !important;
+    width: 5px !important; height: 10px !important;
+    background: transparent !important;
+    border: solid var(--nn-on-primary) !important;
+    border-width: 0 2.5px 2.5px 0 !important;
+    border-radius: 0 !important;
+    opacity: 1 !important;
+    transform: rotate(45deg) !important;
+}
+@mixin minusmark {
+    content: "" !important;
+    position: absolute !important;
+    left: 4px !important; top: 9px !important;
+    width: 10px !important; height: 2.5px !important;
+    border: 0 !important;
+    background: var(--nn-on-primary) !important;
+    transform: none !important;
+}

@@ -1,0 +1,326 @@
+@use 'mixins' as *;
+
+#{$btn} {
+    font-family: var(--nn-display) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+    text-transform: none;
+    min-height: 32px;
+    padding: 0 12px !important;
+    margin: 4px !important;
+    border: 2px solid var(--nn-ink) !important;
+    border-radius: var(--nn-r-sm) !important;
+    box-shadow: var(--nn-shadow-sm) !important;
+    color: var(--nn-text) !important;
+    transition: transform var(--nn-fast), box-shadow var(--nn-fast), background-color var(--nn-fast), border-color var(--nn-fast) !important;
+}
+
+#{$btn}:not(.primary):not(.accent):not(.success):not(.warning):not(.v-btn--active):not([style*="background"]):not([style*="rgb"]) {
+    background-color: var(--nn-card) !important;
+}
+#{$btn}:hover {
+    transform: translate(-2px, -2px) !important;
+    box-shadow: var(--nn-drop) !important;
+    border-color: var(--nn-purple) !important;
+}
+#{$btn}:active {
+    transform: translate(2px, 2px) !important;
+    box-shadow: var(--nn-shadow-press) !important;
+}
+
+.v-btn--small#{$guard} {
+    min-height: 28px !important; padding: 0 8px !important; margin: 2px !important;
+}
+.v-btn--x-small#{$guard} {
+    min-height: 22px !important; padding: 0 6px !important; margin: 1.5px !important;
+}
+
+.v-btn.primary, .v-btn.accent {
+    background: var(--nn-purple) !important;
+    color: var(--nn-on-primary) !important; border-color: var(--nn-ink) !important;
+}
+.v-btn.primary:hover, .v-btn.accent:hover { box-shadow: var(--nn-drop-p) !important; border-color: var(--nn-ink) !important; }
+.v-btn.success { background: var(--nn-green) !important; color: var(--nn-ink) !important; border-color: var(--nn-ink) !important; }
+.v-btn.success:hover { box-shadow: var(--nn-drop-g) !important; }
+.v-btn.warning { background: var(--nn-amber) !important; color: var(--nn-ink) !important; border-color: var(--nn-ink) !important; }
+.v-btn.error {
+    background-color: var(--nn-card) !important; color: var(--nn-red) !important;
+    border-color: var(--nn-red) !important;
+}
+.v-btn.error:hover {
+    background-color: var(--nn-red) !important; color: var(--nn-on-primary) !important;
+    box-shadow: var(--nn-drop) !important;
+}
+.v-btn.v-btn--disabled { opacity: 0.4 !important; box-shadow: none !important; }
+
+.v-btn.primary .v-btn__content, .v-btn.accent .v-btn__content,
+.v-btn.primary .v-icon, .v-btn.accent .v-icon,
+.v-btn.error:hover .v-btn__content, .v-btn.error:hover .v-icon { color: var(--nn-on-primary) !important; }
+.v-btn.success .v-btn__content, .v-btn.success .v-icon,
+.v-btn.warning .v-btn__content, .v-btn.warning .v-icon { color: var(--nn-ink) !important; }
+
+.v-btn--text { text-transform: none; letter-spacing: 0; font-family: var(--nn-display) !important; }
+.v-btn--text:hover { background-color: tint(var(--nn-purple), 16%) !important; }
+
+.v-btn--icon::before {
+    top: 4px !important; right: 4px !important; bottom: 4px !important; left: 4px !important;
+    background-color: var(--nn-purple) !important;
+    border-radius: var(--nn-r-sm) !important;
+    transition: opacity var(--nn-fast) !important;
+}
+.v-btn--icon:hover::before { opacity: 0.2 !important; }
+.v-btn--icon:hover .v-icon { color: var(--nn-purple-lite) !important; }
+.v-btn--icon.v-btn--active::before,
+.v-btn--icon[aria-expanded="true"]::before { opacity: 1 !important; }
+.v-btn--icon.v-btn--active .v-icon,
+.v-btn--icon[aria-expanded="true"] .v-icon { color: var(--nn-on-primary) !important; }
+
+.v-icon--link::after { background-color: var(--nn-purple) !important; }
+.v-btn-toggle { background: transparent !important; }
+
+
+.v-btn--outlined:not(.v-btn--icon):not(.v-btn--fab) {
+    border-radius: var(--nn-r-pill) !important;
+    border-width: 2px !important;
+    background-color: var(--nn-card-2) !important;
+    color: var(--nn-text) !important;
+}
+.v-btn--outlined.success--text,
+.v-btn--outlined.v-btn.success {
+    background-color: tint(var(--nn-green), 14%) !important;
+    color: var(--nn-green) !important;
+    border-color: var(--nn-green-deep) !important;
+}
+.v-btn--outlined.warning--text,
+.v-btn--outlined.v-btn.warning {
+    background-color: tint(var(--nn-amber), 14%) !important;
+    color: var(--nn-amber) !important;
+    border-color: var(--nn-amber-deep) !important;
+}
+.v-btn--outlined.error--text,
+.v-btn--outlined.v-btn.error {
+    background-color: tint(var(--nn-red), 14%) !important;
+    color: var(--nn-red) !important;
+    border-color: var(--nn-red) !important;
+}
+.v-btn--outlined .v-icon { color: inherit !important; }
+
+
+.macros-panel .v-item-group.d-inline-flex {
+    border-radius: var(--nn-r-sm) !important;
+    box-shadow: var(--nn-shadow-sm) !important;
+    transition: transform var(--nn-fast), box-shadow var(--nn-fast) !important;
+}
+.macros-panel .v-item-group.d-inline-flex:hover {
+    transform: translate(-2px, -2px) !important;
+    box-shadow: var(--nn-drop) !important;
+}
+.macros-panel .v-item-group.d-inline-flex:active {
+    transform: translate(2px, 2px) !important;
+    box-shadow: var(--nn-shadow-press) !important;
+}
+
+.macros-panel .v-item-group.d-inline-flex #{$btn},
+.macros-panel .v-item-group.d-inline-flex #{$btn}:hover,
+.macros-panel .v-item-group.d-inline-flex #{$btn}:active {
+    box-shadow: none !important;
+    transform: none !important;
+    margin: 0 !important;
+}
+.macros-panel #{$btn} {
+    background: var(--nn-card) !important;
+    color: var(--nn-text) !important;
+    border: 2px solid var(--nn-edge) !important;
+    box-shadow: var(--nn-shadow-sm) !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.02em !important;
+}
+.macros-panel #{$btn}:hover {
+    background: var(--nn-purple) !important;
+    color: var(--nn-on-primary) !important;
+    border-color: var(--nn-ink) !important;
+    box-shadow: var(--nn-drop) !important;
+}
+.macros-panel .v-btn .v-btn__content,
+.macros-panel .v-btn .v-icon,
+.macros-panel .v-btn.primary .v-btn__content,
+.macros-panel .v-btn.primary .v-icon { color: var(--nn-text) !important; }
+.macros-panel .v-btn:hover .v-btn__content,
+.macros-panel .v-btn:hover .v-icon,
+.macros-panel .v-btn.primary:hover .v-btn__content,
+.macros-panel .v-btn.primary:hover .v-icon { color: var(--nn-on-primary) !important; }
+
+.macros-panel .v-btn.macroWithParameters#{$guard} {
+    border-color: var(--nn-secondary) !important;
+    border-right-width: 0 !important;
+    border-radius: var(--nn-r-sm) 0 0 var(--nn-r-sm) !important;
+    margin-right: 0 !important;
+}
+.macros-panel .v-btn.btnMacroMenu#{$guard} {
+    background: var(--nn-secondary) !important;
+    color: var(--nn-on-secondary) !important;
+    border: 2px solid var(--nn-secondary) !important;
+    border-radius: 0 var(--nn-r-sm) var(--nn-r-sm) 0 !important;
+    margin-left: 0 !important;
+    padding: 0 6px !important;
+    min-width: 0 !important;
+    box-shadow: none !important;
+}
+.macros-panel .v-btn.btnMacroMenu .v-icon { color: var(--nn-on-secondary) !important; }
+.macros-panel .v-btn.macroWithParameters#{$guard}:hover {
+    background: var(--nn-card) !important;
+    color: var(--nn-text) !important;
+    border-color: var(--nn-secondary) !important;
+}
+.macros-panel .v-btn.btnMacroMenu#{$guard}:hover {
+    background: var(--nn-secondary-lite) !important;
+}
+
+
+.v-menu__content .v-btn.macroWithParameters#{$guard} {
+    background: var(--nn-card) !important;
+    color: var(--nn-text) !important;
+    border: 2px solid var(--nn-secondary) !important;
+    border-right-width: 0 !important;
+    border-radius: var(--nn-r-sm) 0 0 var(--nn-r-sm) !important;
+    margin-right: 0 !important;
+    box-shadow: var(--nn-shadow-sm) !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.02em !important;
+}
+.v-menu__content .v-btn.btnMacroMenu#{$guard} {
+    background: var(--nn-secondary) !important;
+    color: var(--nn-on-secondary) !important;
+    border: 2px solid var(--nn-secondary) !important;
+    border-radius: 0 var(--nn-r-sm) var(--nn-r-sm) 0 !important;
+    margin-left: 0 !important;
+    padding: 0 6px !important;
+    min-width: 0 !important;
+    box-shadow: var(--nn-shadow-sm) !important;
+}
+.v-menu__content .v-btn.btnMacroMenu .v-icon { color: var(--nn-on-secondary) !important; }
+.v-menu__content .v-btn.macroWithParameters#{$guard}:hover {
+    background: var(--nn-card) !important;
+    color: var(--nn-text) !important;
+    border-color: var(--nn-secondary) !important;
+    box-shadow: var(--nn-drop) !important;
+}
+.v-menu__content .v-btn.btnMacroMenu#{$guard}:hover {
+    background: var(--nn-secondary-lite) !important;
+}
+
+
+.toolhead-control-panel .v-btn.primary#{$guard} {
+    background: var(--nn-purple) !important;
+    color: var(--nn-on-primary) !important;
+    border: 2px solid var(--nn-ink) !important;
+    box-shadow: var(--nn-shadow-sm) !important;
+    font-weight: 700 !important;
+}
+.toolhead-control-panel .v-btn.primary#{$guard}:hover {
+    background: var(--nn-purple-lite) !important;
+    box-shadow: var(--nn-drop-p) !important;
+}
+.toolhead-control-panel .v-btn.primary .v-btn__content { color: var(--nn-on-primary) !important; }
+
+.toolhead-control-panel .v-btn.btnMinWidthAuto:not(.btnGroup)#{$guard} {
+    letter-spacing: 0 !important;
+    padding: 0 !important;
+    min-height: 30px !important;
+    margin: 2px 0 !important;
+}
+.toolhead-control-panel .v-btn.btnMinWidthAuto .v-btn__content {
+    width: 100% !important;
+    justify-content: center !important;
+    letter-spacing: 0 !important;
+}
+
+
+._btn-group,
+.v-btn-toggle:not(.v-btn-toggle--group) {
+    border: 2px solid var(--nn-ink) !important;
+    border-radius: var(--nn-r-sm) !important;
+    box-shadow: var(--nn-shadow-sm) !important;
+    background: var(--nn-card-2) !important;
+    overflow: hidden !important;
+    display: inline-flex !important;
+}
+
+._btn-group.pt-3 { padding-top: 0 !important; margin-top: 12px !important; }
+._btn-group #{$btn},
+.v-btn-toggle:not(.v-btn-toggle--group) #{$btn} {
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    min-height: 28px !important;
+    background: transparent !important;
+    color: var(--nn-text) !important;
+    opacity: 1 !important;
+}
+._btn-group .v-btn:not(:first-child),
+.v-btn-toggle:not(.v-btn-toggle--group) .v-btn:not(:first-child) {
+    border-left: 2px solid var(--nn-hairline) !important;
+}
+
+._btn-group #{$btn}:hover,
+.v-btn-toggle:not(.v-btn-toggle--group) #{$btn}:hover {
+    background: tint(var(--nn-purple), 18%) !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+._btn-group #{$btn}:active,
+.v-btn-toggle:not(.v-btn-toggle--group) #{$btn}:active {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.v-btn-toggle .v-btn--active { background: tint(var(--nn-purple), 22%) !important; }
+.v-btn-toggle .v-btn--active .v-icon { color: var(--nn-purple-lite) !important; }
+.v-btn-toggle .v-btn.v-btn--active#{$guard} {
+    background: var(--nn-purple) !important;
+    color: var(--nn-on-primary) !important;
+}
+.v-btn-toggle .v-btn.v-btn--active#{$guard} .v-btn__content {
+    color: var(--nn-on-primary) !important;
+}
+.v-btn-toggle .v-btn--disabled { opacity: 0.4 !important; }
+
+.toolhead-control-panel ._btn-group .v-btn.btnHomeAxis#{$guard},
+.toolhead-control-panel ._btn-group .v-btn.btnHomeAxis.primary#{$guard} {
+    border: none !important;
+    border-left: 2px solid var(--nn-hairline) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 28px !important;
+    min-height: 28px !important;
+    align-self: center !important;
+    background: var(--nn-purple) !important;
+    color: var(--nn-on-primary) !important;
+    font-weight: 800 !important;
+}
+.toolhead-control-panel ._btn-group .v-btn.btnHomeAxis.warning#{$guard} {
+    background: var(--nn-amber) !important;
+    color: var(--nn-ink) !important;
+}
+
+.toolhead-control-panel ._btn-group .v-btn.btnHomeAxis .v-btn__content {
+    height: 100% !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+    color: inherit !important;
+}
+
+.toolhead-control-panel ._btn-group .v-btn.btnHomeAxis:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    filter: brightness(1.12) !important;
+}
+
+
+.webcam-panel .v-card__text .row { margin-bottom: 0 !important; }
+.webcam-panel .v-card__text.d-inline-block { vertical-align: bottom !important; }
+.webcam-panel .webcamBackground { border-radius: 0 0 10px 10px !important; }

@@ -1,0 +1,44 @@
+:root {
+    --nn-ink:      #050409;
+    --nn-void:     #1b1826;
+    --nn-card:     #272233;
+    --nn-card-2:   #201c2b;
+    --nn-text:     #f6f0e4;
+    --nn-muted:    #aaa1b5;
+    --nn-hairline: #5c5470;   /* separators */
+    --nn-edge:     #000000;   /* component strokes */
+
+    --nn-purple:      var(--v-primary-base, #7b5cff);                        /* primary: follows Mainsail's color */
+    --nn-purple-deep: color-mix(in srgb, var(--nn-purple) 72%, #000);        /* auto-derived darker shade */
+    --nn-purple-lite: color-mix(in srgb, var(--nn-purple) 58%, #fff);        /* auto-derived lighter shade */
+    --nn-on-primary:  oklch(from var(--nn-purple) clamp(0, (0.62 - l) * infinity, 1) 0 0);  /* auto black/white for contrast */
+
+    --nn-secondary:      oklch(from var(--nn-purple) 0.82 0.19 calc(h + 180));            /* complement of primary */
+    --nn-secondary-deep: color-mix(in srgb, var(--nn-secondary) 72%, #000);              /* auto-derived darker shade */
+    --nn-secondary-lite: color-mix(in srgb, var(--nn-secondary) 62%, #fff);              /* auto-derived lighter shade */
+    --nn-on-secondary:   oklch(from var(--nn-secondary) clamp(0, (0.62 - l) * infinity, 1) 0 0);  /* auto black/white for contrast */
+
+    --nn-green:       #4bf9bc;  --nn-green-deep:  #17c99a;                               /* success */
+    --nn-amber:       #ffab2e;  --nn-amber-deep:  #e0851a;                               /* warning */
+    --nn-red:         #ff5c5c;  --nn-red-deep:    #d43a3a;                               /* error */
+
+    --nn-cyan: var(--nn-green); --nn-cyan-deep: var(--nn-green-deep);
+    --nn-orange: var(--nn-amber); --nn-pink: var(--nn-purple);
+
+    --nn-r: 4px; --nn-r-sm: 3px; --nn-r-pill: 999px;
+
+    --nn-shadow-sm:    4px 4px 0 #000;
+    --nn-shadow-press: 1px 1px 0 #000;
+    --nn-drop:         6px 6px 0 #000;
+    --nn-drop-p:       6px 6px 0 #000;
+    --nn-drop-g:       6px 6px 0 #000;
+    --nn-glow-purple:  0 0 0 transparent;
+    --nn-glow-green:   0 0 0 transparent;
+
+    --nn-ease: cubic-bezier(0.2, 0, 0.15, 1);
+    --nn-fast: 110ms var(--nn-ease);
+
+    --nn-display: 'Space Grotesk', 'Archivo Black', 'Arial Black', system-ui, sans-serif;
+    --nn-ui:      'Space Grotesk', 'Public Sans', 'Inter', system-ui, sans-serif;
+    --nn-mono:    'JetBrains Mono', 'Roboto Mono', ui-monospace, 'Consolas', monospace;
+}

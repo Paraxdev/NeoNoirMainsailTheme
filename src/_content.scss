@@ -1,0 +1,144 @@
+@use 'mixins' as *;
+
+.v-progress-linear {
+    min-height: 8px !important;
+    border-radius: var(--nn-r-pill) !important;
+    background-color: var(--nn-card-2) !important;
+    box-shadow: 0 0 0 2px var(--nn-ink) !important;
+    overflow: hidden !important;
+}
+.v-progress-linear__determinate {
+    background: linear-gradient(180deg, lift(var(--nn-green), 62%), var(--nn-green) 55%, var(--nn-green-deep)) !important;
+}
+.v-progress-linear__indeterminate .long,
+.v-progress-linear__indeterminate .short {
+    background: linear-gradient(180deg, lift(var(--nn-purple-lite), 55%), var(--nn-purple) 60%, var(--nn-purple-deep)) !important;
+}
+
+.v-progress-circular__underlay {
+    stroke: var(--nn-hairline) !important;
+    stroke-width: 4.5 !important;
+}
+.v-progress-circular__overlay {
+    stroke: var(--nn-purple) !important;
+    stroke-width: 4.5 !important;
+    stroke-linecap: round !important;
+    filter: drop-shadow(0 0 3px tint(var(--nn-purple), 75%));
+    transition: stroke var(--nn-fast);
+}
+
+.v-progress-circular svg {
+    overflow: visible !important;
+}
+.v-progress-circular__info {
+    color: var(--nn-text) !important;
+    font-family: var(--nn-mono) !important;
+    font-weight: 700 !important;
+    font-size: 0.9em !important;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.status-panel .v-progress-circular__overlay { stroke: currentColor !important; }
+
+.machine-update-panel {
+    padding-bottom: 16px !important;
+}
+
+.v-btn__loader .v-progress-circular__overlay { stroke: currentColor !important; filter: none !important; }
+.v-btn__loader .v-progress-circular__underlay { stroke: rgba(0, 0, 0, 0.28) !important; }
+
+.v-data-table { background-color: transparent !important; }
+.v-data-table > .v-data-table__wrapper > table > thead > tr > th {
+    background: var(--nn-ink) !important; color: var(--nn-muted) !important;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    border-bottom: 2px solid var(--nn-purple) !important;
+}
+.v-data-table > .v-data-table__wrapper > table > tbody > tr > td { border-bottom: 1px solid var(--nn-hairline) !important; }
+.v-data-table tbody tr:hover { background: tint(var(--nn-purple), 9%) !important; }
+
+.cm-editor {
+    background-color: var(--nn-card-2) !important;
+    color: var(--nn-text) !important;
+    font-family: var(--nn-mono) !important;
+    border-radius: var(--nn-r-sm);
+}
+.cm-editor .cm-scroller { font-family: var(--nn-mono) !important; line-height: 1.55 !important; }
+.cm-editor .cm-gutters {
+    background-color: var(--nn-ink) !important;
+    color: var(--nn-muted) !important;
+    border-right: 2px solid var(--nn-hairline) !important;
+}
+.cm-editor .cm-activeLineGutter { background-color: tint(var(--nn-purple), 22%) !important; color: var(--nn-text) !important; }
+.cm-editor .cm-activeLine { background-color: tint(var(--nn-purple), 8%) !important; }
+.cm-editor .cm-cursor, .cm-editor .cm-dropCursor { border-left-color: var(--nn-secondary) !important; }
+.cm-editor .cm-selectionBackground,
+.cm-editor.cm-focused .cm-selectionBackground,
+.cm-editor ::selection { background-color: tint(var(--nn-purple), 40%) !important; }
+.cm-editor .cm-matchingBracket { background-color: tint(var(--nn-secondary), 25%) !important; color: var(--nn-secondary) !important; outline: none !important; }
+.cm-editor .cm-line { padding: 0 6px !important; }
+.cm-editor .cm-panels { background: var(--nn-ink) !important; color: var(--nn-text) !important; border-color: var(--nn-hairline) !important; }
+.cm-editor .cm-searchMatch { background: tint(var(--nn-amber), 30%) !important; }
+.cm-editor .cm-searchMatch-selected { background: tint(var(--nn-secondary), 35%) !important; }
+
+.cm-editor .tok-comment { color: var(--nn-muted) !important; font-style: italic; }
+.cm-editor .tok-keyword, .cm-editor .tok-controlKeyword, .cm-editor .tok-heading { color: var(--nn-purple-lite) !important; }
+.cm-editor .tok-string, .cm-editor .tok-string2 { color: var(--nn-secondary) !important; }
+.cm-editor .tok-number, .cm-editor .tok-integer, .cm-editor .tok-float { color: var(--nn-amber) !important; }
+.cm-editor .tok-variableName, .cm-editor .tok-propertyName, .cm-editor .tok-attributeName { color: var(--nn-text) !important; }
+.cm-editor .tok-operator, .cm-editor .tok-punctuation { color: var(--nn-muted) !important; }
+.cm-editor .tok-atom, .cm-editor .tok-bool { color: var(--nn-red) !important; }
+
+a.command, .console a.command, .consoleTableRow a.command {
+    color: var(--nn-secondary) !important;
+    text-decoration: none !important;
+    border-bottom: 1px dotted var(--nn-secondary-deep) !important;
+    font-family: var(--nn-mono) !important;
+    padding: 1px 5px !important;
+    margin: 0 -5px !important;
+    border-radius: 3px !important;
+}
+a.command:hover, .console a.command:hover {
+    color: var(--nn-on-secondary) !important;
+    background: var(--nn-secondary) !important;
+    border-bottom-color: transparent !important;
+}
+
+.os-scrollbar .os-scrollbar-handle {
+    background: var(--nn-purple-deep) !important;
+    border-radius: var(--nn-r-pill) !important;
+}
+.os-scrollbar .os-scrollbar-handle:hover { background: var(--nn-purple) !important; }
+
+.v-alert { border-radius: var(--nn-r-sm) !important; }
+.v-alert.error { border-left: 4px solid var(--nn-red) !important; }
+.v-alert.warning { border-left: 4px solid var(--nn-amber) !important; }
+.v-alert.success { border-left: 4px solid var(--nn-green) !important; }
+.v-alert.info { border-left: 4px solid var(--nn-purple) !important; }
+
+html .v-application .primary--text { color: var(--nn-purple-lite) !important; }
+html .v-application .info--text { color: var(--nn-purple-lite) !important; }
+
+html .v-application .v-btn--text.primary--text { color: var(--nn-purple-lite) !important; }
+html .v-application .success--text { color: var(--nn-green) !important; }
+html .v-application .warning--text { color: var(--nn-amber) !important; }
+html .v-application .error--text { color: var(--nn-red) !important; }
+
+html .v-application .green--text, html .v-application .light-green--text, html .v-application .teal--text { color: var(--nn-green) !important; }
+html .v-application .red--text, html .v-application .pink--text, html .v-application .deep-orange--text { color: var(--nn-red) !important; }
+html .v-application .orange--text, html .v-application .amber--text, html .v-application .yellow--text { color: var(--nn-amber) !important; }
+html .v-application .blue--text, html .v-application .light-blue--text, html .v-application .cyan--text, html .v-application .indigo--text { color: var(--nn-purple-lite) !important; }
+.v-application a { color: var(--nn-purple-lite); }
+.v-application a:hover { color: var(--nn-secondary); }
+.text--secondary, .grey--text { color: var(--nn-muted) !important; }
+
+.v-btn:focus-visible,
+.v-main a:focus-visible { outline: 2px solid var(--nn-secondary) !important; outline-offset: 1px !important; }
+.v-input input:focus, .v-input input:focus-visible,
+.v-text-field input:focus, .v-textarea textarea:focus,
+.v-select input:focus { outline: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+    * { transition-duration: 1ms !important; animation-duration: 1ms !important; }
+}

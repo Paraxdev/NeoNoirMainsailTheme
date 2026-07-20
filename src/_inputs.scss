@@ -1,0 +1,247 @@
+@use 'mixins' as *;
+
+
+.v-text-field .v-input__slot,
+.v-textarea .v-input__slot,
+.v-select .v-input__slot {
+    background-color: var(--nn-card-2) !important;
+    border: 2px solid var(--nn-edge) !important;
+    border-radius: var(--nn-r-sm) !important;
+    box-shadow: var(--nn-shadow-sm) !important;
+}
+.v-text-field--outlined .v-input__slot { border: none !important; }
+.v-text-field--outlined fieldset { border: 2px solid var(--nn-edge) !important; }
+.v-text-field:not(.v-text-field--outlined) > .v-input__control > .v-input__slot::before,
+.v-text-field:not(.v-text-field--outlined) > .v-input__control > .v-input__slot::after { display: none !important; }
+
+.v-text-field.v-input--is-focused .v-input__slot,
+.v-select.v-input--is-focused .v-input__slot,
+.v-textarea.v-input--is-focused .v-input__slot { border-color: var(--nn-secondary) !important; }
+.v-text-field--outlined.v-input--is-focused fieldset { border-color: var(--nn-secondary) !important; }
+
+.v-input input, .v-textarea textarea,
+.v-select__selection, .v-select__selections, .v-text-field input { color: var(--nn-text) !important; }
+.v-text-field input::placeholder,
+.v-textarea textarea::placeholder { color: var(--nn-muted) !important; opacity: 1; }
+.v-input__append-inner .v-icon,
+.v-input__append-outer .v-icon { color: var(--nn-muted) !important; }
+.v-input--is-focused .v-input__append-inner .v-icon { color: var(--nn-secondary) !important; }
+.v-label { color: var(--nn-muted) !important; }
+
+.v-input--is-focused .v-label,
+.v-input--is-focused .v-label--active { color: var(--nn-secondary) !important; }
+
+
+.v-text-field:not(.v-text-field--outlined) .v-label--active {
+    transform: translateY(-26px) scale(0.75) !important;
+}
+
+.v-input--dense.v-select .v-input__slot,
+.v-input--dense.v-text-field .v-input__slot,
+.v-toolbar .v-select .v-input__slot,
+.v-card__title .v-select .v-input__slot,
+.v-card__title .v-text-field .v-input__slot {
+    box-shadow: none !important;
+    min-height: 32px !important;
+    margin-bottom: 0 !important;
+}
+.v-input--dense.v-select > .v-input__control,
+.v-toolbar .v-select > .v-input__control { align-self: center !important; }
+
+.v-icon.mdi-content-copy {
+    color: var(--nn-muted) !important;
+    transition: color var(--nn-fast) !important;
+    cursor: pointer;
+}
+.v-icon.mdi-content-copy:hover { color: var(--nn-secondary) !important; }
+.v-input__append-inner .v-icon.mdi-content-copy { margin-left: 8px !important; }
+.v-input__append-inner:has(.mdi-content-copy) {
+    align-self: center !important;
+    margin-top: 0 !important;
+    margin-left: 10px !important;
+    padding-left: 10px !important;
+    border-left: 2px solid var(--nn-hairline) !important;
+}
+
+.v-text-field input[readonly],
+.v-text-field--outlined input {
+    font-family: var(--nn-mono) !important;
+    color: var(--nn-text) !important;
+    padding-right: 4px !important;
+}
+
+.v-text-field--outlined:has(input[readonly]) .v-input__slot {
+    background: var(--nn-card-2) !important;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.45) !important;
+}
+.v-text-field--outlined:has(input[readonly]) fieldset { border: 2px solid var(--nn-edge) !important; }
+.v-text-field--outlined:has(input[readonly]) .v-label {
+    color: var(--nn-muted) !important;
+    font-family: var(--nn-display) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+}
+.v-text-field--outlined:has(input[readonly]) input {
+    font-family: var(--nn-mono) !important;
+    color: var(--nn-text) !important;
+}
+
+
+html .v-application .v-input--switch .v-input--switch__track {
+    width: 38px !important;
+    height: 20px !important;
+    top: calc(50% - 10px) !important;
+    left: 0 !important;
+    opacity: 1 !important;
+    border: 2px solid var(--nn-ink) !important;
+    border-radius: var(--nn-r-pill) !important;
+    background: var(--nn-card-2) !important;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.55) !important;
+}
+html .v-application .v-input--switch .v-input--switch__thumb {
+    width: 18px !important;
+    height: 18px !important;
+    top: calc(50% - 9px) !important;
+    left: 1px !important;
+    border: 2px solid var(--nn-ink) !important;
+    border-radius: 50% !important;
+
+    background: radial-gradient(circle at 34% 28%, #ffffff 0%, #d9cdf7 55%, #a99adf 100%) !important;
+    box-shadow:
+        inset 0 1.5px 1px rgba(255, 255, 255, 0.6),
+        inset 0 -2px 3px rgba(0, 0, 0, 0.28),
+        0 1px 2px rgba(0, 0, 0, 0.55) !important;
+    transition: transform var(--nn-fast), background var(--nn-fast) !important;
+}
+
+html .v-application .v-input--switch.v-input--is-dirty .v-input--switch__track {
+    background: var(--nn-purple) !important;
+    box-shadow: 2px 2px 0 #000 !important;
+}
+html .v-application .v-input--switch.v-input--is-dirty .v-input--switch__thumb,
+html .v-application .v-input--switch.v-input--is-dirty .v-input--selection-controls__ripple {
+    transform: translate(18px, 0) !important;
+}
+html .v-application .v-input--switch .v-input--selection-controls__ripple { transform: translate(0, 0) !important; }
+html .v-application .v-input--switch.v-input--is-disabled { opacity: 0.45 !important; }
+
+
+.v-input--checkbox .v-input--selection-controls__input,
+.v-simple-checkbox { @include checkbox-shell; }
+
+.v-input--checkbox .v-input--selection-controls__input .v-icon,
+.v-simple-checkbox .v-icon,
+.v-input--checkbox .v-input--selection-controls__ripple,
+.v-simple-checkbox .v-input--selection-controls__ripple { display: none !important; }
+
+.v-input--checkbox.v-input--is-dirty .v-input--selection-controls__input,
+.v-input--checkbox .v-input--selection-controls__input:has(input:checked),
+.v-simple-checkbox:has(svg path[d^="M10,17L5,12"]),
+.v-simple-checkbox:has(svg path[d^="M17,13H7V11H17"]) { @include checkbox-checked; }
+
+.v-input--checkbox.v-input--is-dirty .v-input--selection-controls__input::after,
+.v-input--checkbox .v-input--selection-controls__input:has(input:checked)::after,
+.v-simple-checkbox:has(svg path[d^="M10,17L5,12"])::after { @include checkmark; }
+
+.v-input--checkbox .v-input--selection-controls__input:has(input:indeterminate)::after,
+.v-simple-checkbox:has(svg path[d^="M17,13H7V11H17"])::after { @include minusmark; }
+
+
+.settings-row-slot > .v-icon:has(svg path[d^="M10,17L5,12"]),
+.settings-row-slot > .v-icon:has(svg path[d$="V19H5V5H19Z"]) {
+    @include checkbox-shell;
+    min-width: 22px !important;
+    font-size: 0 !important;
+}
+.settings-row-slot > .v-icon:has(svg path[d^="M10,17L5,12"]) svg,
+.settings-row-slot > .v-icon:has(svg path[d$="V19H5V5H19Z"]) svg { display: none !important; }
+.settings-row-slot > .v-icon:has(svg path[d^="M10,17L5,12"]) { @include checkbox-checked; }
+.settings-row-slot > .v-icon:has(svg path[d^="M10,17L5,12"])::after { @include checkmark; }
+
+
+.v-slider--horizontal .v-slider__track-container { height: 8px !important; }
+.v-slider__track-container,
+.v-slider__track-wrapper,
+.v-input__slider .v-slider { overflow: visible !important; }
+.v-slider__track-background {
+    background: var(--nn-card-2) !important;
+    border: 2px solid var(--nn-ink) !important;
+    border-radius: var(--nn-r-pill) !important;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.55) !important;
+}
+.v-slider__track-fill {
+    background: var(--nn-purple) !important;
+    border: 2px solid var(--nn-ink) !important;
+    border-radius: var(--nn-r-pill) !important;
+    box-shadow: 2px 2px 0 #000 !important;
+}
+
+.v-slider__thumb {
+    width: 18px !important;
+    height: 18px !important;
+    left: -9px !important;
+    border: 2px solid var(--nn-ink) !important;
+    border-radius: 50% !important;
+    background: radial-gradient(circle at 34% 28%, var(--nn-purple-lite) 0%, var(--nn-purple) 52%, var(--nn-purple-deep) 100%) !important;
+    box-shadow:
+        inset 0 1.5px 1px rgba(255, 255, 255, 0.5),
+        inset 0 -2px 3px rgba(0, 0, 0, 0.4),
+        0 2px 5px rgba(0, 0, 0, 0.5) !important;
+}
+.v-slider__thumb::before { display: none !important; }
+.v-slider.v-input--is-disabled .v-slider__track-fill { background: var(--nn-edge) !important; box-shadow: none !important; }
+.v-slider.v-input--is-disabled .v-slider__thumb { background: var(--nn-edge) !important; box-shadow: inset 0 1px 1px rgba(255,255,255,.2) !important; }
+
+
+.v-color-picker {
+    background: transparent !important;
+    box-shadow: none !important;
+    color: var(--nn-text) !important;
+}
+.v-color-picker__canvas {
+    border: 2px solid var(--nn-ink) !important;
+    border-radius: var(--nn-r-sm) !important;
+    overflow: hidden !important;
+    box-shadow: var(--nn-shadow-sm) !important;
+}
+.v-color-picker__canvas-dot { box-shadow: 0 0 0 2px var(--nn-ink) !important; }
+.v-color-picker__dot {
+    border: 2px solid var(--nn-ink) !important;
+    border-radius: var(--nn-r-sm) !important;
+}
+
+.v-color-picker__input input {
+    background: var(--nn-card-2) !important;
+    border: 2px solid var(--nn-edge) !important;
+    border-radius: var(--nn-r-sm) !important;
+    color: var(--nn-text) !important;
+    font-family: var(--nn-mono) !important;
+    letter-spacing: 0.04em !important;
+    padding: 4px 6px !important;
+}
+.v-color-picker__input input:focus { border-color: var(--nn-secondary) !important; outline: none !important; }
+.v-color-picker__input span {
+    color: var(--nn-muted) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.02em !important;
+    font-family: var(--nn-display) !important;
+    font-size: 10px !important;
+}
+.v-color-picker .v-btn--icon .v-icon { color: var(--nn-muted) !important; }
+
+.v-color-picker .v-slider__track-background,
+.v-color-picker .v-slider__track-fill {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+.v-color-picker .v-slider__track-container::after { display: none !important; }
+.v-color-picker .v-slider__thumb {
+    width: 14px !important; height: 14px !important; left: -7px !important;
+    background: #ffffff !important;
+    border: 2px solid var(--nn-ink) !important;
+    border-radius: 50% !important;
+    box-shadow: 2px 2px 0 #000 !important;
+}
