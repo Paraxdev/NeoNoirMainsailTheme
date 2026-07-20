@@ -3,7 +3,7 @@
 Neo-Brutalism on Mainsail!
 Made to be personalized, compiled through SCSS!
 
-![NEONOIR dashboard](screenshots/screenshot.png)
+![NEONOIR dashboard](screenshot.png)
 
 ### Setting Primary
 
@@ -66,10 +66,10 @@ this regenerates `custom.css` in place, assuming this folder in in config/.theme
 
 | | |
 |---|---|
-| ![Sidebar nav](screenshots/screenshot1.png) **Sidebar** | ![Macros panel](screenshots/screenshot2.png) **Macros**  |
-| ![Console](screenshots/screenshot3.png) **Console**  | ![Machine page](screenshots/screenshot4.png) **Machine**  |
-| ![Devices dialog](screenshots/screenshot5.png) **Devices** | ![Settings dialog](screenshots/screenshot7.png) **Settings** |
-| ![Code editor](screenshots/screenshot6.png) **Config editor**  | |
+| ![Sidebar nav](screenshot1.png) **Sidebar** | ![Macros panel](screenshot2.png) **Macros**  |
+| ![Console](screenshot3.png) **Console**  | ![Machine page](screenshot4.png) **Machine**  |
+| ![Devices dialog](screenshot5.png) **Devices** | ![Settings dialog](screenshot7.png) **Settings** |
+| ![Code editor](screenshot6.png) **Config editor**  | |
 
 
 ---
