@@ -20,12 +20,12 @@ This theme was build from the ground up with customizability in mind
 meaning changing colors is a breeze!
 
 # shallow customization  
-if you don't want to make deep changes you only should really touch [_token.scss](src/_tokens.scss)
+if you don't want to make deep changes you only should really touch [_token.scss](base/_tokens.scss)
 there you can easily change colors, override a color or even change how the complementary color is set
 
 # deep customization
 every file with _ has a important bit of mainsail styling, if you for example want to change the console input to be more round,
-you'd need to modify [_content.scss](src/_content.scss) and find "a.command, .console a.command, .consoleTableRow a.command" and
+you'd need to modify [_content.scss](base/_base.scss) and find "a.command, .console a.command, .consoleTableRow a.command" and
 set border-radius to whatever you want.
 you can write normal CSS or use more advanced SCSS features
 SCSS Docs: https://sass-lang.com/guide/
@@ -35,7 +35,7 @@ SCSS Docs: https://sass-lang.com/guide/
 ```bash
 git clone https://github.com/Paraxdev/NeoNoirMainsailTheme /home/$USER/printer_data/config/.theme
 ```
-Hard-refresh Mainsail (control + shift + r)  if it doesn't update propperly
+Hard-refresh Mainsail (control + shift + r)  if it doesn't update properly
 
 ## creating a new css for mainsail using node
 

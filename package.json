@@ -2,10 +2,10 @@
   "name": "nn-mainsail-theme",
   "version": "1.0.0",
   "private": true,
-  "description": "Neo-brutalist Mainsail theme. Edit src/*.scss, then build to custom.css.",
+  "description": "Neo-brutalist Mainsail theme scss compiler",
   "scripts": {
-    "build": "sass --no-source-map --style=expanded src/custom.scss custom.css",
-    "watch": "sass --watch --no-source-map --style=expanded src/custom.scss custom.css"
+    "build": "sass --no-source-map --style=expanded base/custom.scss custom.css",
+    "watch": "sass --watch --no-source-map --style=expanded base/custom.scss custom.css"
   },
   "devDependencies": {
     "sass": "^1.77.0"
